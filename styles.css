@@ -7,21 +7,25 @@ body{
     height: 100%;
     display: flex;
 }
+
 main {
 display: flex;
 flex-wrap: wrap;
-margin: auto;
+margin: 100px auto;
 width: 500px;
 height: 500px;
 }
 
 .box{
-    width: calc(100%/16);
-    height: calc(100%/16);
+ 
     box-sizing: border-box;
     border: 1px solid black;
     margin-top: -1px;
     margin-left: -1px;
+}
+
+.box-black{
+    background-color: black;
 }
 
 
