@@ -7,18 +7,24 @@ body {
   height: 100%;
   display: flex;
 }
-
+.container{
+    width: 100%;
+height: 100%;
+}
 main {
   display: flex;
   flex-wrap: wrap;
   margin: 100px auto;
-  width: 500px;
-  height: 500px;
+  width: 512px;
+  height: 512px;
 }
 
 .box {
   box-sizing: border-box;
   border: 1px solid black;
-  margin-top: -1px;
-  margin-left: -1px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.buttons{
+    display: inline-block
 }
