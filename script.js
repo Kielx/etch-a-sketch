@@ -3,8 +3,15 @@ for(let i = 0; i<256; i++){
     newDiv.classList.add(`box`);
     newDiv.classList.add(`newDiv${i}`);
     let main = document.querySelector("main");
-    newDiv.textContent = i;
     main.appendChild(newDiv);
 
 }
 
+let box = document.querySelectorAll(".box");
+box.forEach(content => {
+    content.addEventListener("mouseover", () => {
+        content.style.backgroundColor = 'black';
+    })
+});
+
+console.log(box)
