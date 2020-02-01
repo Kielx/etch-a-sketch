@@ -1,0 +1,13 @@
+main {
+display: inline-flex;
+flex-wrap: wrap;
+width: 500px;
+}
+
+.box{
+    width: 6.25%
+}
+
+.box:nth-child(odd){
+    background-color: gainsboro;
+}
