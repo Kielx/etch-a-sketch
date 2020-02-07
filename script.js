@@ -10,55 +10,60 @@ const createGrid = function(size) {
   }
 };
 
-const blackBackground = function() {
-    makeGrid()
+const Buttons = {
+  buttonList : ['black', 'shading', 'rand', 'sticky'],
+  blackBackground : function() {
+  makeGrid();
   let boxlist = document.querySelectorAll(".box");
   boxlist.forEach(box => {
     box.addEventListener("mouseover", () => {
       event.target.style.backgroundColor = `rgb(0,0,0)`;
     });
   });
-};
+},
 
-const stickyBackground = function() {
-    makeGrid()
+  stickyBackground : function() {
+  makeGrid();
+let boxlist = document.querySelectorAll(".box");
+boxlist.forEach(box => {
+  let x = Math.floor(Math.random() * 256);
+  let y = Math.floor(Math.random() * 256);
+  let z = Math.floor(Math.random() * 256);
+  box.addEventListener("mouseover", () => {
+    event.target.style.backgroundColor = `rgb(${x}, ${y}, ${z})`;
+  });
+});
+},
+
+  shadingBackground : function() {
+  makeGrid();
   let boxlist = document.querySelectorAll(".box");
   boxlist.forEach(box => {
-    let x = Math.floor(Math.random() * 256);
-    let y = Math.floor(Math.random() * 256);
-    let z = Math.floor(Math.random() * 256);
     box.addEventListener("mouseover", () => {
+      event.target.style.backgroundColor = 'gray';
+      event.target.style.opacity = Number(event.target.style.opacity) + 0.1;
+      event.target.style.border = '1px solid black';
+    });
+  });
+},
+
+
+  randBackground : function() {
+  makeGrid();
+  let boxlist = document.querySelectorAll(".box");
+  boxlist.forEach(box => {
+
+    box.addEventListener("mouseover", () => {
+      let x = Math.floor(Math.random() * 256);
+      let y = Math.floor(Math.random() * 256);
+      let z = Math.floor(Math.random() * 256);
+      event.target.style.opacity = 1;
       event.target.style.backgroundColor = `rgb(${x}, ${y}, ${z})`;
     });
   });
+},
+
 };
-
-const randBackground = function() {
-    makeGrid()
-    let boxlist = document.querySelectorAll(".box");
-    boxlist.forEach(box => {
-
-      box.addEventListener("mouseover", () => {
-        let x = Math.floor(Math.random() * 256);
-        let y = Math.floor(Math.random() * 256);
-        let z = Math.floor(Math.random() * 256);
-        event.target.style.opacity = 1;
-        event.target.style.backgroundColor = `rgb(${x}, ${y}, ${z})`;
-      });
-    });
-  };
-
-  const shadingBackground = function() {
-    makeGrid();
-    let boxlist = document.querySelectorAll(".box");
-    boxlist.forEach(box => {
-      box.addEventListener("mouseover", () => {
-        event.target.style.backgroundColor = 'gray';
-        event.target.style.opacity = Number(event.target.style.opacity) + 0.1;
-        event.target.style.border = '1px solid black';
-      });
-    });
-  };
 
 
 const makeGrid = function(){
@@ -67,14 +72,16 @@ const makeGrid = function(){
     createGrid(gridSize);};
 
 
-buttonList = ['black', 'shading', 'rand', 'sticky'];
-buttonList.forEach(button => {
-  but = document.querySelectorAll(`.${button}`)
+
+  Buttons.buttonList.forEach(button => {
+  const but = document.querySelectorAll(`.${button}`);
   but.forEach(but => {
-    but.addEventListener('click', blackBackground)
-  })
-})
+    but.addEventListener('click', Buttons[`${button}Background`]);
+  });
+});
 
 
+const buttonCreateGrid = document.getElementById("create-button");
+buttonCreateGrid.addEventListener("click", makeGrid);
 
 makeGrid();
