@@ -20,7 +20,7 @@ const blackBackground = function() {
   });
 };
 
-const stickyRandomBackground = function() {
+const stickyBackground = function() {
     makeGrid()
   let boxlist = document.querySelectorAll(".box");
   boxlist.forEach(box => {
@@ -33,7 +33,7 @@ const stickyRandomBackground = function() {
   });
 };
 
-const randomBackground = function() {
+const randBackground = function() {
     makeGrid()
     let boxlist = document.querySelectorAll(".box");
     boxlist.forEach(box => {
@@ -48,7 +48,7 @@ const randomBackground = function() {
     });
   };
 
-  const shading = function() {
+  const shadingBackground = function() {
     makeGrid();
     let boxlist = document.querySelectorAll(".box");
     boxlist.forEach(box => {
@@ -67,24 +67,14 @@ const makeGrid = function(){
     createGrid(gridSize);};
 
 
-
-const black = document.querySelectorAll(".black")
-black.forEach(black => {
-  black.addEventListener('click', blackBackground);
+buttonList = ['black', 'shading', 'rand', 'sticky'];
+buttonList.forEach(button => {
+  but = document.querySelectorAll(`.${button}`)
+  but.forEach(but => {
+    but.addEventListener('click', blackBackground)
+  })
 })
 
 
-const stickyButtonRandom = document.getElementById("sticky-random-button");
-stickyButtonRandom.addEventListener("click", stickyRandomBackground);
-
-const buttonRandom = document.getElementById("random-button");
-buttonRandom.addEventListener("click", randomBackground);
-
-const buttonShading = document.getElementById("shading-button");
-buttonShading.addEventListener("click", shading);
-
-
-const buttonCreateGrid = document.getElementById("create-button");
-buttonCreateGrid.addEventListener("click", makeGrid)
 
 makeGrid();
