@@ -28,57 +28,55 @@
     <![endif]-->
   <div class="container">
     <!-- Always shows a header, even in smaller screens. -->
-<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-  <header class="mdl-layout__header">
-    <div class="mdl-layout__header-row">
-      <!-- Title -->
-      <span class="mdl-layout-title">Etch-a-sketch by Kielx</span>
-      <!-- Add spacer, to align navigation to the right -->
-      <div class="mdl-layout-spacer"></div>
-      <!-- Navigation. We hide it in small screens. -->
-      <nav class="mdl-navigation mdl-layout--large-screen-only">
-        <div class="buttons">
-          <button class="black mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-            Black Coloring
-          </button>
-          <button id="shading-button"
-            class="shading mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-            Shading
-          </button>
-          <button id="sticky-random-button"
-            class="sticky mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-            Sticky Random Coloring
-          </button>
-          <button id="random-button"
-            class="rand mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-            Random Coloring
-          </button>
-          <button id="create-button"
-            class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-            Create Grid
-          </button>
-          <input id="grid-size" type="number" value="16" />
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+      <header class="mdl-layout__header">
+        <div class="mdl-layout__header-row">
+          <!-- Title -->
+          <span class="mdl-layout-title">Etch-a-sketch by Kielx</span>
+          <!-- Add spacer, to align navigation to the right -->
+          <div class="mdl-layout-spacer"></div>
+          <!-- Navigation. We hide it in small screens. -->
+          <nav class="mdl-navigation mdl-layout--large-screen-only">
+            <div class="buttons">
+              <button class="black mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                Black Coloring
+              </button>
+              <button id="shading-button"
+                class="shading mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                Shading
+              </button>
+              <button id="sticky-random-button"
+                class="sticky mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                Sticky Random Coloring
+              </button>
+              <button id="random-button"
+                class="rand mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                Random Coloring
+              </button>
+              <button id="create-button"
+                class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                Create Grid
+              </button>
+              <input id="grid-size" type="number" value="16" />
+            </div>
+          </nav>
         </div>
-      </nav>
-    </div>
-  </header>
-  
-  <div class="mdl-layout__drawer">
-    <span class="mdl-layout-title">Etch-a-sketch</span>
-    <nav class="mdl-navigation">
-    <button class="black mdl-button mdl-js-button mdl-button--accent">Black Coloring</button>
-    <button class="sticky mdl-button mdl-js-button mdl-button--accent">Sticky Random Coloring</button>
-    <button class="rand mdl-button mdl-js-button mdl-button--accent">Random Coloring</button>
-      <a class="mdl-navigation__link" href="">Link</a>
-      <a class="mdl-navigation__link" href="">Link</a>
-      <a class="mdl-navigation__link" href="">Link</a>
-    </nav>
-  </div>
-    
-    <main></main>
-  </div>
+      </header>
 
-  <script src="./script.js" async defer></script>
+      <div class="mdl-layout__drawer">
+        <span class="mdl-layout-title">Etch-a-sketch</span>
+        <nav class="mdl-navigation">
+          <button class="black mdl-button mdl-js-button mdl-button--accent">Black Coloring</button>
+          <button class="shading mdl-button mdl-js-button mdl-button--accent">Shading</button>
+          <button class="sticky mdl-button mdl-js-button mdl-button--accent">Sticky Random Coloring</button>
+          <button class="rand mdl-button mdl-js-button mdl-button--accent">Random Coloring</button>
+        </nav>
+      </div>
+
+      <main></main>
+    </div>
+
+    <script src="./script.js" async defer></script>
 </body>
 
 </html>
