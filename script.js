@@ -73,12 +73,16 @@ black.forEach(black => {
   black.addEventListener('click', blackBackground);
 })
 
+const sticky = document.querySelectorAll(".sticky")
+sticky.forEach(sticky => {
+  sticky.addEventListener('click', stickyRandomBackground);
+})
 
-const stickyButtonRandom = document.getElementById("sticky-random-button");
-stickyButtonRandom.addEventListener("click", stickyRandomBackground);
+const rand = document.querySelectorAll(".rand")
+rand.forEach(rand => {
+  rand.addEventListener('click', randomBackground);
+})
 
-const buttonRandom = document.getElementById("random-button");
-buttonRandom.addEventListener("click", randomBackground);
 
 const buttonShading = document.getElementById("shading-button");
 buttonShading.addEventListener("click", shading);
