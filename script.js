@@ -68,8 +68,11 @@ const makeGrid = function(){
 
 
 
-const buttonBlack = document.getElementById("black-button");
-buttonBlack.addEventListener("click", blackBackground);
+const black = document.querySelectorAll(".black")
+black.forEach(black => {
+  black.addEventListener('click', blackBackground);
+})
+
 
 const stickyButtonRandom = document.getElementById("sticky-random-button");
 stickyButtonRandom.addEventListener("click", stickyRandomBackground);
@@ -83,3 +86,5 @@ buttonShading.addEventListener("click", shading);
 
 const buttonCreateGrid = document.getElementById("create-button");
 buttonCreateGrid.addEventListener("click", makeGrid)
+
+makeGrid();

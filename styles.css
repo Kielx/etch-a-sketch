@@ -1,12 +1,20 @@
 html {
   width: 100%;
   height: 100%;
+
+  
+
 }
+
 body {
   width: 100%;
   height: 100%;
+  background-image: url('./images/spray.png');
+    background-position: left;
+    background-repeat: no-repeat;
   display: flex;
 }
+
 .container{
     width: 100%;
 height: 100%;
@@ -17,6 +25,7 @@ main {
   margin: 100px auto;
   width: 512px;
   height: 512px;
+  background-color: white;
 }
 
 .box {
@@ -25,6 +34,4 @@ main {
   transition: background-color 0.3s ease-in-out;
 }
 
-.buttons{
-    display: inline-block
-}
+
