@@ -87,4 +87,6 @@ buttonCreateGrid.addEventListener("click", makeGrid);
 const buttonCreateGridSmall = document.getElementById("create-button-small");
 buttonCreateGridSmall.addEventListener("click", makeGridSmall);
 
+window.onload(Buttons.stickyBackground());
+
 makeGrid();
