@@ -11,11 +11,11 @@ const createGrid = function (size) {
 };
 
 const Buttons = {
-  buttonList: ['black', 'shading', 'rand', 'sticky'],
+  buttonList: ["black", "shading", "rand", "sticky"],
   blackBackground: function () {
-    makeGrid();
+    window.innerWidth > 1000 ? makeGrid() : makeGridSmall();
     let boxlist = document.querySelectorAll(".box");
-    boxlist.forEach(box => {
+    boxlist.forEach((box) => {
       box.addEventListener("mouseover", () => {
         event.target.style.backgroundColor = `rgb(0,0,0)`;
       });
@@ -23,9 +23,9 @@ const Buttons = {
   },
 
   stickyBackground: function () {
-    makeGrid();
+    window.innerWidth > 1000 ? makeGrid() : makeGridSmall();
     let boxlist = document.querySelectorAll(".box");
-    boxlist.forEach(box => {
+    boxlist.forEach((box) => {
       let x = Math.floor(Math.random() * 256);
       let y = Math.floor(Math.random() * 256);
       let z = Math.floor(Math.random() * 256);
@@ -36,22 +36,21 @@ const Buttons = {
   },
 
   shadingBackground: function () {
-    makeGrid();
+    window.innerWidth > 1000 ? makeGrid() : makeGridSmall();
     let boxlist = document.querySelectorAll(".box");
-    boxlist.forEach(box => {
+    boxlist.forEach((box) => {
       box.addEventListener("mouseover", () => {
-        event.target.style.backgroundColor = 'gray';
+        event.target.style.backgroundColor = "gray";
         event.target.style.opacity = Number(event.target.style.opacity) + 0.1;
-        event.target.style.border = '1px solid black';
+        event.target.style.border = "1px solid black";
       });
     });
   },
 
-
   randBackground: function () {
-    makeGrid();
+    window.innerWidth > 1000 ? makeGrid() : makeGridSmall();
     let boxlist = document.querySelectorAll(".box");
-    boxlist.forEach(box => {
+    boxlist.forEach((box) => {
       box.addEventListener("mouseover", () => {
         let x = Math.floor(Math.random() * 256);
         let y = Math.floor(Math.random() * 256);
@@ -61,27 +60,31 @@ const Buttons = {
       });
     });
   },
-
 };
 
-
 const makeGrid = function () {
-  document.querySelector('main').textContent = '';
+  document.querySelector("main").textContent = "";
   let gridSize = document.getElementById("grid-size").value;
   createGrid(gridSize);
 };
 
+const makeGridSmall = function () {
+  document.querySelector("main").textContent = "";
+  let gridSize = document.getElementById("grid-size-small").value;
+  createGrid(gridSize);
+};
 
-
-Buttons.buttonList.forEach(button => {
+Buttons.buttonList.forEach((button) => {
   const but = document.querySelectorAll(`.${button}`);
-  but.forEach(but => {
-    but.addEventListener('click', Buttons[`${button}Background`]);
+  but.forEach((but) => {
+    but.addEventListener("click", Buttons[`${button}Background`]);
   });
 });
 
-
 const buttonCreateGrid = document.getElementById("create-button");
 buttonCreateGrid.addEventListener("click", makeGrid);
+
+const buttonCreateGridSmall = document.getElementById("create-button-small");
+buttonCreateGridSmall.addEventListener("click", makeGridSmall);
 
 makeGrid();
