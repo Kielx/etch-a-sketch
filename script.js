@@ -94,4 +94,4 @@ gridSlider.addEventListener("input", makeGrid);
 const gridSliderSmall = document.getElementById("gridSliderSmall");
 gridSliderSmall.addEventListener("input", makeGridSmall);
 
-window.addEventListener("load", makeGrid());
+makeGrid();
