@@ -9,21 +9,21 @@ const createGrid = function (size) {
     newDiv.style = `width: calc(100%/${size}); height: calc(100%/${size})`;
   }
 };
+let currentColor;
 
 const Buttons = {
   buttonList: ["black", "shading", "rand", "sticky"],
   blackBackground: function () {
-    window.innerWidth > 1000 ? makeGrid() : makeGridSmall();
     let boxlist = document.querySelectorAll(".box");
     boxlist.forEach((box) => {
       box.addEventListener("mouseover", () => {
         event.target.style.backgroundColor = `rgb(0,0,0)`;
       });
     });
+    currentColor = Buttons.blackBackground;
   },
 
   stickyBackground: function () {
-    window.innerWidth > 1000 ? makeGrid() : makeGridSmall();
     let boxlist = document.querySelectorAll(".box");
     boxlist.forEach((box) => {
       let x = Math.floor(Math.random() * 256);
@@ -33,10 +33,10 @@ const Buttons = {
         event.target.style.backgroundColor = `rgb(${x}, ${y}, ${z})`;
       });
     });
+    currentColor = Buttons.stickyBackground;
   },
 
   shadingBackground: function () {
-    window.innerWidth > 1000 ? makeGrid() : makeGridSmall();
     let boxlist = document.querySelectorAll(".box");
     boxlist.forEach((box) => {
       box.addEventListener("mouseover", () => {
@@ -45,10 +45,10 @@ const Buttons = {
         event.target.style.border = "1px solid black";
       });
     });
+    currentColor = Buttons.shadingBackground;
   },
 
   randBackground: function () {
-    window.innerWidth > 1000 ? makeGrid() : makeGridSmall();
     let boxlist = document.querySelectorAll(".box");
     boxlist.forEach((box) => {
       box.addEventListener("mouseover", () => {
@@ -59,25 +59,32 @@ const Buttons = {
         event.target.style.backgroundColor = `rgb(${x}, ${y}, ${z})`;
       });
     });
+    currentColor = Buttons.randBackground;
   },
 };
+
+currentColor = Buttons.randBackground;
 
 const makeGrid = function () {
   document.querySelector("main").textContent = "";
   let gridSize = document.getElementById("gridSlider").value;
   createGrid(gridSize);
+  currentColor();
 };
 
 const makeGridSmall = function () {
   document.querySelector("main").textContent = "";
   let gridSize = document.getElementById("gridSliderSmall").value;
   createGrid(gridSize);
+  currentColor();
 };
 
 Buttons.buttonList.forEach((button) => {
   const but = document.querySelectorAll(`.${button}`);
   but.forEach((but) => {
-    but.addEventListener("click", Buttons[`${button}Background`]);
+    but.addEventListener("click", () => {
+      Buttons[`${button}Background`](), makeGrid();
+    });
   });
 });
 
@@ -87,6 +94,4 @@ gridSlider.addEventListener("input", makeGrid);
 const gridSliderSmall = document.getElementById("gridSliderSmall");
 gridSliderSmall.addEventListener("input", makeGridSmall);
 
-window.onload(Buttons.stickyBackground());
-
-makeGrid();
+window.addEventListener("load", makeGrid());
