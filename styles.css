@@ -13,8 +13,9 @@ body {
   width: 100%;
   height: 100%;
   background-image: url("./images/spray.png");
-  background-position: left;
   background-repeat: no-repeat;
+  background-size: contain;
+  background-position: 0 100px;
   display: flex;
 }
 
@@ -37,7 +38,7 @@ main {
   transition: background-color 0.3s ease-in-out;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1025px) {
   .mdl-layout__drawer-button {
     display: none;
   }
@@ -55,5 +56,17 @@ main {
     height: 3vh;
     margin: auto;
     margin-bottom: 1vh;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  main {
+    width: 90vw;
+    height: 90vw;
+  }
+
+  body {
+    background-size: contain;
+    background-position: 0 400px;
   }
 }
