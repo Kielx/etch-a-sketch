@@ -20,6 +20,21 @@ const Buttons = {
         event.target.style.backgroundColor = `rgb(0,0,0)`;
       });
     });
+    boxlist.forEach((box) => {
+      box.addEventListener("touchmove", () => {
+        event.target.style.backgroundColor = `rgb(0,0,0)`;
+      });
+    });
+    boxlist.forEach((box) => {
+      box.addEventListener("touchend ", () => {
+        event.target.style.backgroundColor = `rgb(0,0,0)`;
+      });
+    });
+    boxlist.forEach((box) => {
+      box.addEventListener("touchstart", () => {
+        event.target.style.backgroundColor = `rgb(0,0,0)`;
+      });
+    });
     currentColor = Buttons.blackBackground;
   },
 
