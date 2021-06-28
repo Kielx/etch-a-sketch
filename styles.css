@@ -44,21 +44,15 @@ main {
 }
 
 #grid-size {
-  font-weight: bold;
-
-  height: 36px !important;
   text-align: center;
-  width: 3rem;
+  width: 10vw;
   margin-left: 20px;
 }
 
 @media screen and (max-width: 1024px) {
   #grid-size-small {
-    width: 30% !important;
-    font-weight: bold;
-    text-align: center;
-    height: 5vh;
-    font-size: 24px;
+    width: 80% !important;
+    height: 3vh;
     margin: auto;
     margin-bottom: 1vh;
   }
