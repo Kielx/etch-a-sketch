@@ -64,13 +64,13 @@ const Buttons = {
 
 const makeGrid = function () {
   document.querySelector("main").textContent = "";
-  let gridSize = document.getElementById("grid-size").value;
+  let gridSize = document.getElementById("gridSlider").value;
   createGrid(gridSize);
 };
 
 const makeGridSmall = function () {
   document.querySelector("main").textContent = "";
-  let gridSize = document.getElementById("grid-size-small").value;
+  let gridSize = document.getElementById("gridSliderSmall").value;
   createGrid(gridSize);
 };
 
@@ -81,11 +81,11 @@ Buttons.buttonList.forEach((button) => {
   });
 });
 
-const buttonCreateGrid = document.getElementById("create-button");
-buttonCreateGrid.addEventListener("click", makeGrid);
+const gridSlider = document.getElementById("gridSlider");
+gridSlider.addEventListener("input", makeGrid);
 
-const buttonCreateGridSmall = document.getElementById("create-button-small");
-buttonCreateGridSmall.addEventListener("click", makeGridSmall);
+const gridSliderSmall = document.getElementById("gridSliderSmall");
+gridSliderSmall.addEventListener("input", makeGridSmall);
 
 window.onload(Buttons.stickyBackground());
 

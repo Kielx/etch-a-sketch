@@ -43,14 +43,14 @@ main {
   }
 }
 
-#grid-size {
+#gridSlider {
   text-align: center;
   width: 10vw;
   margin-left: 20px;
 }
 
 @media screen and (max-width: 1024px) {
-  #grid-size-small {
+  #gridSliderSmall {
     width: 80% !important;
     height: 3vh;
     margin: auto;
