@@ -20,21 +20,6 @@ const Buttons = {
         event.target.style.backgroundColor = `rgb(0,0,0)`;
       });
     });
-    boxlist.forEach((box) => {
-      box.addEventListener("touchmove", () => {
-        event.target.style.backgroundColor = `rgb(0,0,0)`;
-      });
-    });
-    boxlist.forEach((box) => {
-      box.addEventListener("touchend ", () => {
-        event.target.style.backgroundColor = `rgb(0,0,0)`;
-      });
-    });
-    boxlist.forEach((box) => {
-      box.addEventListener("touchstart", () => {
-        event.target.style.backgroundColor = `rgb(0,0,0)`;
-      });
-    });
     currentColor = Buttons.blackBackground;
   },
 
@@ -82,14 +67,10 @@ currentColor = Buttons.randBackground;
 
 const makeGrid = function () {
   document.querySelector("main").textContent = "";
-  let gridSize = document.getElementById("gridSlider").value;
-  createGrid(gridSize);
-  currentColor();
-};
-
-const makeGridSmall = function () {
-  document.querySelector("main").textContent = "";
-  let gridSize = document.getElementById("gridSliderSmall").value;
+  let gridSize;
+  window.screen.width >= 1024
+    ? (gridSize = document.getElementById("gridSlider").value)
+    : (gridSize = document.getElementById("gridSliderSmall").value);
   createGrid(gridSize);
   currentColor();
 };
@@ -107,6 +88,6 @@ const gridSlider = document.getElementById("gridSlider");
 gridSlider.addEventListener("input", makeGrid);
 
 const gridSliderSmall = document.getElementById("gridSliderSmall");
-gridSliderSmall.addEventListener("input", makeGridSmall);
+gridSliderSmall.addEventListener("input", makeGrid);
 
 makeGrid();
