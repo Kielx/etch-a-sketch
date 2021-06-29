@@ -57,9 +57,14 @@ main {
     margin: auto;
     margin-bottom: 1vh;
   }
+
+  body {
+    background-size: contain;
+    background-position: -100px 200px;
+  }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px) {
   main {
     width: 90vw;
     height: 90vw;
